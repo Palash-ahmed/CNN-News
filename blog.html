@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://kit.fontawesome.com/29b2604035.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-black">
+
+    <header class="w-10/12 mx-auto">
+        <div class="sm:flex justify-between p-5 border-b">
+
+            <div>
+                <a href="index.html" class="text-3xl font-semibold text-white bg-green-500 px-8 py-3 rounded">CNN_News</a>
+            </div>
+
+            <ul class="flex items-center">
+                <li class="mr-5 text-lg text-white cursor-pointer p-2 rounded mb-2 hover:bg-sky-100 hover:text-blue-400"><a href="index.html">News</a></li>
+                <li class="mr-5 text-lg text-white cursor-pointer p-2 rounded mb-2 hover:bg-sky-100 hover:text-blue-400"><a href="blog.html">Blog</a></li>
+                <li><img class="h-10 w-10 rounded-full overflow-hidden" src="images/Learn-With-Palash.jpg" alt="Palash"></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="my-20 w-9/12 mx-auto">
+        <section>
+
+            <div class="p-5 mb-5 rounded-md bg-gray-800">
+                <h2 class="text-2xl text-green-400 font-semibold">Difference between var, let & Const</h2>
+                <p class="mt-5 text-white text-lg">
+                    var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to the top of their scope. But while var variables are initialized with undefined , let and const variables are not initialized.
+                </p>
+            </div>
+
+            <div class="p-5 mb-5 rounded-md bg-gray-800">
+                <h2 class="text-2xl text-green-400 font-semibold">Difference between arrow and regular function</h2>
+                <p class="mt-5 text-white text-lg">
+                    Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function.
+                    Arrow function — also called fat arrow function— is a new feature introduced in ES6 that is a more concise syntax for writing function expressions. While both regular JavaScript functions and arrow functions work in a similar manner, there are certain differences between them.
+                </p>
+            </div>
+
+            <div class="p-5 mb-5 rounded-md bg-gray-800">
+                <h2 class="text-2xl text-green-400 font-semibold">Difference between map, foreach, filter, find</h2>
+                <p class="mt-5 text-white text-lg">
+                    Map executes the same code on every element in an array and returns a new array with the updated elements.In the example below we would use .map to iterate over the elements of the cost array and divide each element by 10, then assign our new array containing the new cost to the variable.
+                    forEach is used to execute the same code on every element in an array but does not change the array and it returns undefined.In the example below we would use .forEach() to iterate over an array of food and log that we would want to eat each of them.
+                    The find() method is used to find all the descendant elements of the selected element. It finds the element in the DOM tree by traversing through the root to leaf. The filter() method is used to filters all the elements and returns the element that matches and the element that do not match are removed.
+                    Filter checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.In the example below we would use .filter to return values that are less than 200.
+                    
+                </p>
+            </div>
+            <div class="p-5 mb-5 rounded-md bg-gray-800">
+                <h2 class="text-2xl text-green-400 font-semibold">Why we use template string?</h2>
+                <p class="mt-5 text-white text-lg">
+                    Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders).Template string is an ES6 feature. We can pass our data as an expression if want. It helps us to
+                    make our text dynamic by interpolation ${}. This is written inside bactick quotation ``;
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-5 bg-black text-center">
+        <p class="text-2xl text-white border-t pt-8"><small>Copyright 2022 © CNN_News</small></p>
+    </footer>
+ 
+    <script src="js/index.js"></script>
+</body>
+</html>

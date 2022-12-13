@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://kit.fontawesome.com/29b2604035.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-black">
+    <div id="modal"
+        class="h-screen w-full flex justify-center items-center bg-gray-300 bg-opacity-50 fixed top-0 left-0 hidden">
+        <div class="bg-black rounded-md sm:w-6/12 w-11/12">
+            <div class="text-blue-500 border-b px-4 py-2 flex justify-between items-center">
+                <h3><strong id="modal-title"></strong></h3>
+                <i class="text-white fa-solid fa-xmark cursor-pointer close-modal"></i>
+            </div>
+            <div id="modal-body" class="text-white p-3 h-80 overflow-auto min-h-0">
+
+            </div>
+            <div class="border-t p-2 flex justify-end">
+                <button class="py-2 px-5 bg-green-500 rounded-md mr-2 close-modal">Close</button>
+                <button class="py-2 px-5 bg-blue-500 rounded-md close-modal">Okay</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="w-10/12 mx-auto">
+        <div class="sm:flex justify-between p-5 border-b">
+            <div>
+                <a href="index.html" class="text-3xl font-semibold text-white bg-green-500 px-8 py-3 rounded">CNN_News</a>
+            </div>
+            <ul class="flex items-center">
+                <li class="mr-5 text-lg text-white cursor-pointer p-2 rounded mb-2 hover:bg-sky-100 hover:text-blue-400"><a href="index.html">News</a></li>
+                <li class="mr-5 text-lg text-white cursor-pointer p-2 rounded mb-2 hover:bg-sky-100 hover:text-blue-400"><a href="blog.html">Blog</a></li>
+                <li><img class="h-10 w-10 rounded-full overflow-hidden" src="images/Learn-With-Palash.jpg" alt="Palash"></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="w-9/12 mx-auto">
+
+        <section class="my-10">
+            <ul class="flex justify-between flex-wrap" id="categories">
+
+            </ul>
+        </section>
+
+        <section class="my-5">
+            <div class="h-12 bg-white rounded-md">
+                <h3 class="text-xl text-black p-2"><span id="all-news">Select Category To See News</span></h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="sm:flex justify-between items-center">
+                <div class="sm:mb-0 mb-5">
+                    <select class="bg-green-400">
+                        <option value="0">Deafault</option>
+                        <option value="1">Most Popular</option>
+                        <option value="2">Recent</option>
+                    </select>
+                </div>
+                <div class="sm:mb-0 mb-5">
+                    <button class="text-xl py-2 px-5 bg-green-700 text-white rounded-md border">Todays Pick</button>
+                    <button class="text-xl bg-blue-700 text-white py-2 px-5 rounded-md border">Trending</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-10 min-h-screen">
+
+            <div class="flex justify-center items-center my-20 hidden" id="loader">
+                <div role="status">
+                    <svg aria-hidden="true"
+                        class="mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <h2 id="not-found" class="text-3xl text-white font-semibold my-16 text-center hidden">No Data Found</h2>
+
+
+            <div id="news-container">
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-5 bg-black text-center">
+        <p class="text-2xl text-white border-t pt-8"><small>Copyright 2022 © CNN_News</small></p>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
